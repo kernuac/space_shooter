@@ -6,7 +6,7 @@ fn main() {
     let video = ctx.video().unwrap();
 
     let window = video
-        .window("My first game", 128, 64)
+        .window("space_shooter", 128, 64)
         .position_centered()
         .build()
         .unwrap();
@@ -20,6 +20,7 @@ fn main() {
 
     'running: loop {
         canvas.set_draw_color(Color::RGB(0, 255, 255));
+        canvas.clear();
         for event in events.poll_iter() {
             match event {
                 sdl2::event::Event::Quit {..} => break 'running,
