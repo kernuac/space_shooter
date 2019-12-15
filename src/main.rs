@@ -1,7 +1,5 @@
-// use sdl2;
-// use sdl2::pixels::Color;
-// use sdl2::pixels::Palette; not used yet...
 mod game;
+
 const MAX_W: u32 = 128;
 const MAX_H: u32 = 64;
 

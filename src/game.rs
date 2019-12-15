@@ -1,7 +1,7 @@
 use sdl2;
 use sdl2::video;
 use sdl2::event::Event;
-
+use sdl2::pixels::Color;
 pub struct Game {
     pub title: &'static str,
     pub events: sdl2::EventPump,
@@ -18,6 +18,7 @@ impl Game {
             .position_centered()
             .build()
             .unwrap();
+        
         let canvas = window.into_canvas()
             .build()
             .unwrap();
@@ -45,7 +46,9 @@ impl Game {
     }
 
     pub fn update(&mut self) {
-
+        self.canvas.set_draw_color( Color::RGB(0,0,0) );
+        self.canvas.clear();
+        self.canvas.present(); 
     }
 
     pub fn draw(&mut self) {
